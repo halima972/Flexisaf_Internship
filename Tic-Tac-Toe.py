@@ -13,17 +13,14 @@ def main_game_loop():
     while not game_over:
         display_board(board)
 
-        # This 'if' and its 'else' should be at the same indentation level
+    
         if current_player == human_player:
             print(f"\nIt's Player {current_player}'s turn (You).")
             make_move(board, current_player)
-        else: # current_player == ai_player
+        else: 
             print(f"\nIt's Player {current_player}'s turn (AI).")
             ai_move(board, ai_player, human_player)
-            # No input needed for AI, it makes its move automatically
-
-        # This 'if', 'elif', and 'else' block should also be at the same indentation level
-        # as the 'if/else' block above it (i.e., inside the 'while' loop)
+           
         if check_win(board, current_player):
             display_board(board)
             if current_player == human_player:
@@ -36,7 +33,6 @@ def main_game_loop():
             print("\nIt's a Tie! The board is full and no one won.")
             game_over = True
         else:
-            # Switch players - this 'if' and its 'else' are nested inside the outer 'else'
             if current_player == human_player:
                 current_player = ai_player
             else:
